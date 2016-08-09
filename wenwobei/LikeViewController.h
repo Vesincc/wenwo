@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LikeViewController.h
 //  wenwobei
 //
 //  Created by HanQi on 16/8/9.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface LikeViewController : UIViewController
 
 @end
-
