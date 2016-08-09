@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBB027D41D5A033000221D9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB027D31D5A033000221D9C /* main.m */; };
+		BBB027D71D5A033000221D9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB027D61D5A033000221D9C /* AppDelegate.m */; };
+		BBB027DA1D5A033000221D9C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB027D91D5A033000221D9C /* ViewController.m */; };
+		BBB027DD1D5A033000221D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB027DB1D5A033000221D9C /* Main.storyboard */; };
+		BBB027DF1D5A033000221D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBB027DE1D5A033000221D9C /* Assets.xcassets */; };
+		BBB027E21D5A033000221D9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB027E01D5A033000221D9C /* LaunchScreen.storyboard */; };
+		BBB027ED1D5A033100221D9C /* wenwobeiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB027EC1D5A033100221D9C /* wenwobeiTests.m */; };
+		BBB027F81D5A033100221D9C /* wenwobeiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB027F71D5A033100221D9C /* wenwobeiUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBB027E91D5A033100221D9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBB027C71D5A033000221D9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBB027CE1D5A033000221D9C;
+			remoteInfo = wenwobei;
+		};
+		BBB027F41D5A033100221D9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBB027C71D5A033000221D9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBB027CE1D5A033000221D9C;
+			remoteInfo = wenwobei;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBB027CF1D5A033000221D9C /* wenwobei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wenwobei.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBB027D31D5A033000221D9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BBB027D51D5A033000221D9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BBB027D61D5A033000221D9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BBB027D81D5A033000221D9C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BBB027D91D5A033000221D9C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BBB027DC1D5A033000221D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBB027DE1D5A033000221D9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBB027E11D5A033000221D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBB027E31D5A033100221D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBB027E81D5A033100221D9C /* wenwobeiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wenwobeiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBB027EC1D5A033100221D9C /* wenwobeiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wenwobeiTests.m; sourceTree = "<group>"; };
+		BBB027EE1D5A033100221D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBB027F31D5A033100221D9C /* wenwobeiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wenwobeiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBB027F71D5A033100221D9C /* wenwobeiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wenwobeiUITests.m; sourceTree = "<group>"; };
+		BBB027F91D5A033100221D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBB027CC1D5A033000221D9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBB027E51D5A033100221D9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBB027F01D5A033100221D9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBB027C61D5A033000221D9C = {
+			isa = PBXGroup;
+			children = (
+				BBB027D11D5A033000221D9C /* wenwobei */,
+				BBB027EB1D5A033100221D9C /* wenwobeiTests */,
+				BBB027F61D5A033100221D9C /* wenwobeiUITests */,
+				BBB027D01D5A033000221D9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBB027D01D5A033000221D9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBB027CF1D5A033000221D9C /* wenwobei.app */,
+				BBB027E81D5A033100221D9C /* wenwobeiTests.xctest */,
+				BBB027F31D5A033100221D9C /* wenwobeiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBB027D11D5A033000221D9C /* wenwobei */ = {
+			isa = PBXGroup;
+			children = (
+				BBB027D51D5A033000221D9C /* AppDelegate.h */,
+				BBB027D61D5A033000221D9C /* AppDelegate.m */,
+				BBB027D81D5A033000221D9C /* ViewController.h */,
+				BBB027D91D5A033000221D9C /* ViewController.m */,
+				BBB027DB1D5A033000221D9C /* Main.storyboard */,
+				BBB027DE1D5A033000221D9C /* Assets.xcassets */,
+				BBB027E01D5A033000221D9C /* LaunchScreen.storyboard */,
+				BBB027E31D5A033100221D9C /* Info.plist */,
+				BBB027D21D5A033000221D9C /* Supporting Files */,
+			);
+			path = wenwobei;
+			sourceTree = "<group>";
+		};
+		BBB027D21D5A033000221D9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBB027D31D5A033000221D9C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBB027EB1D5A033100221D9C /* wenwobeiTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBB027EC1D5A033100221D9C /* wenwobeiTests.m */,
+				BBB027EE1D5A033100221D9C /* Info.plist */,
+			);
+			path = wenwobeiTests;
+			sourceTree = "<group>";
+		};
+		BBB027F61D5A033100221D9C /* wenwobeiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BBB027F71D5A033100221D9C /* wenwobeiUITests.m */,
+				BBB027F91D5A033100221D9C /* Info.plist */,
+			);
+			path = wenwobeiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBB027CE1D5A033000221D9C /* wenwobei */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBB027FC1D5A033100221D9C /* Build configuration list for PBXNativeTarget "wenwobei" */;
+			buildPhases = (
+				BBB027CB1D5A033000221D9C /* Sources */,
+				BBB027CC1D5A033000221D9C /* Frameworks */,
+				BBB027CD1D5A033000221D9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wenwobei;
+			productName = wenwobei;
+			productReference = BBB027CF1D5A033000221D9C /* wenwobei.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBB027E71D5A033100221D9C /* wenwobeiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBB027FF1D5A033100221D9C /* Build configuration list for PBXNativeTarget "wenwobeiTests" */;
+			buildPhases = (
+				BBB027E41D5A033100221D9C /* Sources */,
+				BBB027E51D5A033100221D9C /* Frameworks */,
+				BBB027E61D5A033100221D9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBB027EA1D5A033100221D9C /* PBXTargetDependency */,
+			);
+			name = wenwobeiTests;
+			productName = wenwobeiTests;
+			productReference = BBB027E81D5A033100221D9C /* wenwobeiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BBB027F21D5A033100221D9C /* wenwobeiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBB028021D5A033100221D9C /* Build configuration list for PBXNativeTarget "wenwobeiUITests" */;
+			buildPhases = (
+				BBB027EF1D5A033100221D9C /* Sources */,
+				BBB027F01D5A033100221D9C /* Frameworks */,
+				BBB027F11D5A033100221D9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBB027F51D5A033100221D9C /* PBXTargetDependency */,
+			);
+			name = wenwobeiUITests;
+			productName = wenwobeiUITests;
+			productReference = BBB027F31D5A033100221D9C /* wenwobeiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBB027C71D5A033000221D9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = HanQi;
+				TargetAttributes = {
+					BBB027CE1D5A033000221D9C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = T2Q45F84HW;
+					};
+					BBB027E71D5A033100221D9C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = T2Q45F84HW;
+						TestTargetID = BBB027CE1D5A033000221D9C;
+					};
+					BBB027F21D5A033100221D9C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = T2Q45F84HW;
+						TestTargetID = BBB027CE1D5A033000221D9C;
+					};
+				};
+			};
+			buildConfigurationList = BBB027CA1D5A033000221D9C /* Build configuration list for PBXProject "wenwobei" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBB027C61D5A033000221D9C;
+			productRefGroup = BBB027D01D5A033000221D9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBB027CE1D5A033000221D9C /* wenwobei */,
+				BBB027E71D5A033100221D9C /* wenwobeiTests */,
+				BBB027F21D5A033100221D9C /* wenwobeiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBB027CD1D5A033000221D9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBB027E21D5A033000221D9C /* LaunchScreen.storyboard in Resources */,
+				BBB027DF1D5A033000221D9C /* Assets.xcassets in Resources */,
+				BBB027DD1D5A033000221D9C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBB027E61D5A033100221D9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBB027F11D5A033100221D9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBB027CB1D5A033000221D9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBB027DA1D5A033000221D9C /* ViewController.m in Sources */,
+				BBB027D71D5A033000221D9C /* AppDelegate.m in Sources */,
+				BBB027D41D5A033000221D9C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBB027E41D5A033100221D9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBB027ED1D5A033100221D9C /* wenwobeiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBB027EF1D5A033100221D9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBB027F81D5A033100221D9C /* wenwobeiUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBB027EA1D5A033100221D9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBB027CE1D5A033000221D9C /* wenwobei */;
+			targetProxy = BBB027E91D5A033100221D9C /* PBXContainerItemProxy */;
+		};
+		BBB027F51D5A033100221D9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBB027CE1D5A033000221D9C /* wenwobei */;
+			targetProxy = BBB027F41D5A033100221D9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBB027DB1D5A033000221D9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBB027DC1D5A033000221D9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BBB027E01D5A033000221D9C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBB027E11D5A033000221D9C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBB027FA1D5A033100221D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BBB027FB1D5A033100221D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBB027FD1D5A033100221D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = wenwobei/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanqi.wenwobei;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BBB027FE1D5A033100221D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = wenwobei/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanqi.wenwobei;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BBB028001D5A033100221D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wenwobeiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanqi.wenwobeiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wenwobei.app/wenwobei";
+			};
+			name = Debug;
+		};
+		BBB028011D5A033100221D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wenwobeiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanqi.wenwobeiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wenwobei.app/wenwobei";
+			};
+			name = Release;
+		};
+		BBB028031D5A033100221D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wenwobeiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanqi.wenwobeiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wenwobei;
+			};
+			name = Debug;
+		};
+		BBB028041D5A033100221D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wenwobeiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanqi.wenwobeiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wenwobei;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBB027CA1D5A033000221D9C /* Build configuration list for PBXProject "wenwobei" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBB027FA1D5A033100221D9C /* Debug */,
+				BBB027FB1D5A033100221D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBB027FC1D5A033100221D9C /* Build configuration list for PBXNativeTarget "wenwobei" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBB027FD1D5A033100221D9C /* Debug */,
+				BBB027FE1D5A033100221D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BBB027FF1D5A033100221D9C /* Build configuration list for PBXNativeTarget "wenwobeiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBB028001D5A033100221D9C /* Debug */,
+				BBB028011D5A033100221D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BBB028021D5A033100221D9C /* Build configuration list for PBXNativeTarget "wenwobeiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBB028031D5A033100221D9C /* Debug */,
+				BBB028041D5A033100221D9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBB027C71D5A033000221D9C /* Project object */;
+}
