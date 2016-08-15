@@ -10,7 +10,9 @@
 #import "HQTabBar.h"
 #import "DiscoverViewController.h"
 #import "LikeViewController.h"
+#import "HQNavigationController.h"
 #import "Config.h"
+#import "SendViewController.h"
 
 @interface HQTabBarController () <HQTabBarDelegate>
 
@@ -42,7 +44,7 @@
     [super viewDidLayoutSubviews];
     
     CGRect frame = self.tabBar.frame;
-    frame.size.height = 55;
+    frame.size.height = 54;
     frame.origin.y = self.view.frame.size.height - frame.size.height;
     self.tabBar.frame = frame;
     
@@ -67,12 +69,20 @@
     [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : HQ_RGBA(255, 118, 2, 1)} forState:UIControlStateNormal];
     [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : HQ_RGBA(255, 118, 2, 1)} forState:UIControlStateSelected];
     
-    [self addChildViewController:childViewController];
+    HQNavigationController *navigationVc = [[HQNavigationController alloc] initWithRootViewController:childViewController];
+    [self addChildViewController:navigationVc];
+    
+//    [self addChildViewController:childViewController];
 }
 
 - (void)hQTabBar:(HQTabBar *)tabBar btnDidClick:(UIButton *)button {
     
     NSLog(@"click");
+    
+    SendViewController *sendVC = [[SendViewController alloc] init];
+    [self presentViewController:sendVC animated:YES completion:^{
+        
+    }];
     
 }
 @end

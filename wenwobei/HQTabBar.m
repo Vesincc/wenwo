@@ -28,7 +28,7 @@
         
         UIButton *button = [[UIButton alloc] init];
         
-        button.frame = CGRectMake(0, 0, 80, 50);
+        button.frame = CGRectMake(0, 0, 70, 50);
         
         [button setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
