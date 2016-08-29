@@ -10,4 +10,6 @@
 
 @interface SendReasonView : UIView
 
+@property (nonatomic, strong) UITextView *textView;
+
 @end

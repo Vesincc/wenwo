@@ -19,6 +19,9 @@
         
         self.finishLineColor = color;
         self.imageFinish = [UIImage imageNamed:finishImageName];
+        self.finishImageName = finishImageName;
+        self.defaultImageName = imageName;
+        self.defaultLineColor = HQ_RGBA(230, 230, 230, 1);
         
         self.icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
         self.icon.frame = CGRectMake(0, 0, 40, 40);

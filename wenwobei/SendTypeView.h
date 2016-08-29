@@ -10,4 +10,6 @@
 
 @interface SendTypeView : UIView
 
+@property (nonatomic, strong) UITextField *type;
+
 @end

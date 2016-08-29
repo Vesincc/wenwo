@@ -18,6 +18,7 @@
 @interface SendSegmentView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame index:(int)index;
+- (void)addSelected:(int)index;
 
 @property (nonatomic, weak) id <SendSegmentViewDelegate> delegate;
 

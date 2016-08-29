@@ -10,4 +10,6 @@
 
 @interface SendShopNameView : UIView
 
+@property (nonatomic, strong) UITextField *textField;
+
 @end

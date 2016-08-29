@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UIColor *finishLineColor;
 @property (nonatomic, copy) NSString *finishImageName;
 @property (nonatomic, strong) UIImage *imageFinish;
+@property (nonatomic, copy) NSString *defaultImageName;
+@property (nonatomic, strong) UIColor *defaultLineColor;
 
 - (instancetype)initWithFrame:(CGRect)frame iconImageNamed:(NSString *)imageName finishedIconImageName:(NSString *)finishImageName lineColor:(UIColor *)color mainView:(UIView *)mainView;
 

@@ -76,6 +76,8 @@
 		BBB028DC1D5F69BC00221D9C /* DrawUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB028DB1D5F69BC00221D9C /* DrawUtils.m */; };
 		BBB028DF1D5F6D6400221D9C /* SendTotalSimpleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB028DE1D5F6D6400221D9C /* SendTotalSimpleView.m */; };
 		BBB028E31D60E0CF00221D9C /* SendTotalViewObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB028E21D60E0CF00221D9C /* SendTotalViewObserver.m */; };
+		BBB028E71D6309F500221D9C /* ImageObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB028E61D6309F500221D9C /* ImageObserver.m */; };
+		BBB028EA1D64399000221D9C /* SendDataObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB028E91D64399000221D9C /* SendDataObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +241,10 @@
 		BBB028DE1D5F6D6400221D9C /* SendTotalSimpleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendTotalSimpleView.m; sourceTree = "<group>"; };
 		BBB028E11D60E0CF00221D9C /* SendTotalViewObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendTotalViewObserver.h; sourceTree = "<group>"; };
 		BBB028E21D60E0CF00221D9C /* SendTotalViewObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendTotalViewObserver.m; sourceTree = "<group>"; };
+		BBB028E51D6309F500221D9C /* ImageObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageObserver.h; sourceTree = "<group>"; };
+		BBB028E61D6309F500221D9C /* ImageObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageObserver.m; sourceTree = "<group>"; };
+		BBB028E81D64399000221D9C /* SendDataObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendDataObserver.h; sourceTree = "<group>"; };
+		BBB028E91D64399000221D9C /* SendDataObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendDataObserver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -659,6 +665,10 @@
 			children = (
 				BBB028E11D60E0CF00221D9C /* SendTotalViewObserver.h */,
 				BBB028E21D60E0CF00221D9C /* SendTotalViewObserver.m */,
+				BBB028E51D6309F500221D9C /* ImageObserver.h */,
+				BBB028E61D6309F500221D9C /* ImageObserver.m */,
+				BBB028E81D64399000221D9C /* SendDataObserver.h */,
+				BBB028E91D64399000221D9C /* SendDataObserver.m */,
 			);
 			name = Observer;
 			sourceTree = "<group>";
@@ -806,6 +816,7 @@
 				BBB028B31D5EF61400221D9C /* SDWebImageDownloaderOperation.m in Sources */,
 				BBB028191D5A0AA600221D9C /* SendViewController.m in Sources */,
 				BBB0280A1D5A04D500221D9C /* HQTabBarController.m in Sources */,
+				BBB028E71D6309F500221D9C /* ImageObserver.m in Sources */,
 				BBB028821D5E401B00221D9C /* MJRefreshGifHeader.m in Sources */,
 				BBB028871D5E401B00221D9C /* NSBundle+MJRefresh.m in Sources */,
 				BBB028AE1D5EF61400221D9C /* NSData+ImageContentType.m in Sources */,
@@ -826,6 +837,7 @@
 				BBB028B91D5EF61400221D9C /* UIImage+WebP.m in Sources */,
 				BBB028B41D5EF61400221D9C /* SDWebImageManager.m in Sources */,
 				BBB028AF1D5EF61400221D9C /* SDImageCache.m in Sources */,
+				BBB028EA1D64399000221D9C /* SendDataObserver.m in Sources */,
 				BBB027D71D5A033000221D9C /* AppDelegate.m in Sources */,
 				BBB028B51D5EF61400221D9C /* SDWebImagePrefetcher.m in Sources */,
 				BBB028E31D60E0CF00221D9C /* SendTotalViewObserver.m in Sources */,

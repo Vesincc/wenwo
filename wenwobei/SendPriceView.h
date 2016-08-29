@@ -10,4 +10,6 @@
 
 @interface SendPriceView : UIView
 
+@property (nonatomic, strong) UITextField *textField;
+
 @end

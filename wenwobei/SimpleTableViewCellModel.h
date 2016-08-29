@@ -45,10 +45,14 @@
 
 @property (nonatomic, copy) NSString *askTag;
 
+- (BOOL)isEqualToKey:(NSString *)key value:(NSString *)value;
+
 + (NSArray *)analysisFromInfoNetworkMode:(NSArray *)infoArray;
 
 + (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
 
 + (NSArray *)arrayWithJsonString:(NSString *)jsonString;
+
++ (NSString*)dictionaryToJson:(NSDictionary *)dic;
 
 @end

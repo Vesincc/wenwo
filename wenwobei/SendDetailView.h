@@ -10,4 +10,6 @@
 
 @interface SendDetailView : UIView
 
+@property (nonatomic, strong) UITextView *textView;
+
 @end
