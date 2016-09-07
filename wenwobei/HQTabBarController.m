@@ -14,7 +14,7 @@
 #import "Config.h"
 #import "SendViewController.h"
 
-@interface HQTabBarController () <HQTabBarDelegate>
+@interface HQTabBarController () <HQTabBarDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -70,6 +70,7 @@
     [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : HQ_RGBA(255, 118, 2, 1)} forState:UIControlStateSelected];
     
     HQNavigationController *navigationVc = [[HQNavigationController alloc] initWithRootViewController:childViewController];
+    navigationVc.delegate = self;
     [self addChildViewController:navigationVc];
     
 //    [self addChildViewController:childViewController];

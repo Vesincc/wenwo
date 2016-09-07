@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class SendPriceView;
+
+@protocol SendPriceViewDelegate <NSObject>
+
+- (void)sendPriceView:(SendPriceView *)view textField:(UITextField *)textField didEndEditValue:(NSString *)value;
+
+@end
+
 @interface SendPriceView : UIView
 
 @property (nonatomic, strong) UITextField *textField;
 
+@property (nonatomic, weak) id <SendPriceViewDelegate> delegate;
 @end

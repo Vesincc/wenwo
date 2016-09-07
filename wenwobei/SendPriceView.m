@@ -31,8 +31,27 @@
         [self addSubview:note];
         [self addSubview:self.textField];
         
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldEndEdit)];
+        
+        [self addGestureRecognizer:gesture];
+        
+        
     }
     return self;
 }
 
+- (void)textFieldEndEdit {
+
+
+    [self.textField endEditing:YES];
+    
+    if ([self.delegate respondsToSelector:@selector(sendPriceView:textField:didEndEditValue:)]) {
+    
+        [self.delegate sendPriceView:self textField:self.textField didEndEditValue:self.textField.text];
+    
+    }
+    
+    
+
+}
 @end

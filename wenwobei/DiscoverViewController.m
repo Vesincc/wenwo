@@ -15,14 +15,19 @@
 #import "SimpleTableViewCellModel.h"
 #import "MJRefresh.h"
 #import "SDWebImage/UIImageView+WebCache.h"
+#import "DetailViewController.h"
+#import "MeView.h"
+#import "UserInfo.h"
 
 @interface DiscoverViewController() <UITableViewDelegate, UITableViewDataSource, CarouseViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *carouselImages;
+@property (nonatomic, strong) MeView *meView;
 
 @property (nonatomic, strong) NSMutableArray *cellData;
 @property (nonatomic, assign) int pageNum;
+@property (nonatomic, strong) UIButton *titleButton;
 
 @end
 
@@ -62,8 +67,17 @@
     titleLable.textColor = TITLE_COLER;
     self.navigationItem.titleView = titleLable;
 
-    UIBarButtonItem *titleButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(navigationButtonClick:)];
-    [self.navigationItem setLeftBarButtonItem:titleButton];
+//    UIBarButtonItem *titleButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(navigationButtonClick:)];
+    
+    self.titleButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [self.titleButton setImage:[UIImage imageNamed:@"default_userhead"] forState:UIControlStateNormal];
+    self.titleButton.imageView.layer.cornerRadius = 20;
+    self.titleButton.imageView.layer.masksToBounds = YES;
+    [self.titleButton addTarget:self action:@selector(navigationButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    titleButton.backgroundColor = [UIColor cyanColor];
+    
+    UIBarButtonItem *titleButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.titleButton];
+    [self.navigationItem setLeftBarButtonItem:titleButtonItem];
     
     [self carouselImages];
     
@@ -79,7 +93,17 @@
     [self.tableView.mj_footer endRefreshing];
     
     
+    [self meView];
     
+    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+    [self.view addGestureRecognizer:gesture];
+    
+}
+
+- (void)swipeGesture:(UIPanGestureRecognizer *)gesture {
+
+    NSLog(@"%@----------ok", gesture);
+
 }
 
 - (void)getInfoFromNetwork {
@@ -92,7 +116,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     params[@"username"] = @"573b0c63ad5b950057533669";
-    params[@"size"] = @"10";
+    params[@"size"] = @"20";
     params[@"page"] = [NSString stringWithFormat:@"%d", self.pageNum];
     
     NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlStr parameters:params error:nil];
@@ -206,7 +230,88 @@
 
 - (void)navigationButtonClick:(UIBarButtonItem *)buttton {
 
-    NSLog(@"click");
+    
+//    MeViewController *vc = [[MeViewController alloc] init];
+//    
+//    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//    
+//    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    
+//    [self presentViewController:vc animated:NO completion:^{
+//    
+//        vc.view.center = CGPointMake(-SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+//        
+//        [UIView animateWithDuration:0.3 animations:^{
+//            vc.view.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+//        }];
+//        
+//    }];
+    
+//    self.tabBarController.tabBar.hidden = YES;
+//    self.navigationController.navigationBar.hidden = YES;
+    
+    self.meView.center = CGPointMake(-SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.meView.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+        
+        self.navigationController.navigationBar.center = CGPointMake(SCREEN_WIDTH*3/2 - 70, self.navigationController.navigationBar.center.y);
+        
+        self.tabBarController.tabBar.center = CGPointMake(SCREEN_WIDTH*3/2 - 70, self.tabBarController.tabBar.center.y);
+        
+        self.tableView.center = CGPointMake(SCREEN_WIDTH*3/2 - 70, SCREEN_HEIGHT/2);
+        
+        self.titleButton.alpha = 0;
+        
+        
+    }];
+    
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    DetailViewController *vc = [[DetailViewController alloc] initWithData:self.cellData[indexPath.row]];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+
+
+}
+
+- (MeView *)meView {
+
+    if (!_meView) {
+        
+        _meView = [[MeView alloc] init];
+        
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(meViewClick:)];
+        [_meView addGestureRecognizer:gesture];
+        
+        
+        
+        [self.view addSubview:_meView];
+        
+    
+    }
+    return _meView;
+
+}
+
+- (void)meViewClick:(UITapGestureRecognizer *)gesture {
+
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.meView.center = CGPointMake(-SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+        
+        self.navigationController.navigationBar.center = CGPointMake(SCREEN_WIDTH*1/2, self.navigationController.navigationBar.center.y);
+        
+        self.tabBarController.tabBar.center = CGPointMake(SCREEN_WIDTH/2, self.tabBarController.tabBar.center.y);
+        
+        self.tableView.center = CGPointMake(SCREEN_WIDTH*1/2, SCREEN_HEIGHT/2);
+        
+        self.titleButton.alpha = 1;
+        
+    }];
 
 }
 

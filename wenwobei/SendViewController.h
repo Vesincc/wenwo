@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SimpleTableViewCellModel.h"
 
 @interface SendViewController : UIViewController
+
+@property (nonatomic, strong) SimpleTableViewCellModel *sendData;
+@property (nonatomic, strong) UIImage *image;
 
 @end

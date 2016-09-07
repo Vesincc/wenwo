@@ -31,8 +31,23 @@
         
         [self addSubview:note];
         
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endTextEdit)];
+        [self addGestureRecognizer:gesture];
+        
     }
     return self;
+}
+
+- (void)endTextEdit {
+
+    [self.textView endEditing:YES];
+    
+    if ([self.delegate respondsToSelector:@selector(sendReasonView:textView:value:)]) {
+    
+        [self.delegate sendReasonView:self textView:self.textView value:self.textView.text];
+    
+    }
+
 }
 
 @end

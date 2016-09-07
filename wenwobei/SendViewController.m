@@ -19,7 +19,7 @@
 #import "SendPriceView.h"
 #import "SendDataObserver.h"
 
-@interface SendViewController() <SendSegmentViewDelegate, UIScrollViewDelegate, SendTotalViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface SendViewController() <SendSegmentViewDelegate, UIScrollViewDelegate, SendTotalViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SendTypeViewDelegate, SendReasonViewDelegate, SendDetailViewDelegate, SendShopNameViewDelegate, SendPriceViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -37,9 +37,6 @@
 @property (nonatomic, strong) SendShopNameView *sendShopNameView;
 @property (nonatomic, strong) SendPriceView *sendPriceView;
 @property (nonatomic, strong) SendPositionView *sendPositionView;
-
-@property (nonatomic, strong) SimpleTableViewCellModel *sendData;
-@property (nonatomic, strong) UIImage *image;
 
 @property (nonatomic, strong) SendDataObserver *imageDataObserver;
 @property (nonatomic, strong) SendDataObserver *typeDataObserver;
@@ -122,6 +119,12 @@
     self.priceDataObserver = [[SendDataObserver alloc] init];
     self.priceDataObserver.name = @"price";
     [self.sendData addObserver:self.priceDataObserver forKeyPath:@"askPrice" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:(__bridge void * _Nullable)(self.sendTotalView)];
+    
+//    self.sendData.askPrice = @"12";
+//    self.sendData.askReason = @"很安逸";
+//    self.sendData.askTag = @"火锅";
+//    self.sendData.askContentShowDetail = @"详情";
+//    self.sendData.shopName = @"店名";
 
 
 }
@@ -162,7 +165,7 @@
     if (!_sendPriceView) {
     
         _sendPriceView = [[SendPriceView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 6, 60, SCREEN_WIDTH, SCREEN_HEIGHT - 60)];
-        
+        _sendPriceView.delegate = self;
         [self.scrollView addSubview:_sendPriceView];
     
     
@@ -178,7 +181,7 @@
     if (!_sendShopNameView) {
     
         _sendShopNameView = [[SendShopNameView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 4, 60, SCREEN_WIDTH, SCREEN_HEIGHT - 60)];
-        
+        _sendShopNameView.delegate = self;
         [self.scrollView addSubview:_sendShopNameView];
     
     
@@ -194,7 +197,7 @@
     if (!_sendReasonView) {
     
         _sendReasonView = [[SendReasonView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 60, SCREEN_WIDTH, SCREEN_HEIGHT - 60)];
-        
+        _sendReasonView.delegate = self;
         
         [self.scrollView addSubview:_sendReasonView];
     
@@ -210,8 +213,9 @@
     if (!_sendDetailView) {
     
         _sendDetailView = [[SendDetailView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 3, 60, SCREEN_WIDTH, SCREEN_HEIGHT - 60)];
-        
+        _sendDetailView.delegate = self;
         [self.scrollView addSubview:_sendDetailView];
+        
     
     }
     return _sendDetailView;
@@ -429,7 +433,7 @@
     
         _sendTypeView = [[SendTypeView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 1, 60, SCREEN_WIDTH, SCREEN_HEIGHT - 60)];
 //        _sendTypeView.backgroundColor = [UIColor cyanColor];
-        
+        _sendTypeView.delegate = self;
         
         
         [self.scrollView addSubview:_sendTypeView];
@@ -626,6 +630,37 @@
     
     self.sendTotalView.image = image;
     self.image = image;
+
+}
+
+- (void)sendTypeView:(SendTypeView *)sendTypeView textField:(UITextField *)textField value:(NSString *)value {
+
+    self.sendData.askTag = value;
+
+
+}
+
+- (void)sendReasonView:(SendReasonView *)reasonView textView:(UITextView *)textView value:(NSString *)value {
+
+    self.sendData.askReason = value;
+
+}
+
+- (void)sendDetailView:(SendDetailView *)view textView:(UITextView *)textView didEndEditValue:(NSString *)value {
+
+    self.sendData.askContentShowDetail = value;
+
+}
+
+- (void)sendShopNameView:(SendShopNameView *)view textField:(UITextField *)textField didEndEditValue:(NSString *)value {
+
+    self.sendData.shopName = value;
+
+}
+
+- (void)sendPriceView:(SendPriceView *)view textField:(UITextField *)textField didEndEditValue:(NSString *)value {
+
+    self.sendData.askPrice = value;
 
 }
 

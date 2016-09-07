@@ -44,7 +44,7 @@
         self.shopName = [[NSString alloc] init];
         self.staus = [[NSString alloc] init];
         self.updatedAt = [[NSString alloc] init];
-        self.askType = [[NSString alloc] init];
+        self.askTag = [[NSString alloc] init];
         
         
     }
@@ -95,6 +95,7 @@
         cellData.staus = info.staus;
         cellData.updatedAt = info.updatedAt;
         
+        
         @try {
             
             NSDictionary *contentDetail = [self dictionaryWithJsonString:info.askContentShow];
@@ -125,7 +126,9 @@
         
         @try {
             
-            cellData.askImage = [[self dictionaryWithJsonString:info.askImage] valueForKey:@"image"];
+            cellData.askImage = [[self dictionaryWithJsonString:info.askImage] valueForKey:@"image"][0];
+//            NSLog(@"%@",info.askImage);
+//            NSLog(@"%@",cellData.askImage);
             
         } @catch (NSException *exception) {
             

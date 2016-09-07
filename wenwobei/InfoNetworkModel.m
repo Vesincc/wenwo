@@ -28,7 +28,7 @@
         info.askLevel = [temp valueForKey:@"askLevel"];
         info.askPosition = [temp valueForKey:@"askPosition"];
         info.askPrice = [temp valueForKey:@"askPrice"];
-        info.askReason = [temp valueForKey:@"askReanson"];
+        info.askReason = [temp valueForKey:@"askReason"];
         info.askTagStr = [temp valueForKey:@"askTagStr"];
         info.askType = [temp valueForKey:@"askType"];
         info.buyNum = [temp valueForKey:@"buyNum"];
@@ -43,6 +43,7 @@
         info.shopName = [temp valueForKey:@"shopName"];
         info.staus = [temp valueForKey:@"staus"];
         info.updatedAt = [temp valueForKey:@"updatedAt"];
+        
         
         [array addObject:info];
     

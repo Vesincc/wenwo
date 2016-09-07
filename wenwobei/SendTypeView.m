@@ -10,7 +10,7 @@
 #import "Config.h"
 #import "DrawUtils.h"
 
-@implementation SendTypeView
+@implementation SendTypeView 
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -28,8 +28,27 @@
         
         [self addSubview:self.type];
         
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endTextFieldEdit)];
+        [self addGestureRecognizer:gesture];
+        
+        
+        
     }
     return self;
+}
+
+- (void)endTextFieldEdit{
+    
+    [self.type endEditing:YES];
+    
+    if ([self.delegate respondsToSelector:@selector(sendTypeView:textField:value:)]) {
+    
+        [self.delegate sendTypeView:self textField:self.type value:self.type.text];
+    
+    
+    }
+    
+
 }
 
 @end

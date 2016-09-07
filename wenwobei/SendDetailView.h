@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SendDetailView;
+
+@protocol SendDetailViewDelegate <NSObject>
+
+- (void)sendDetailView:(SendDetailView *)view textView:(UITextView *)textView didEndEditValue:(NSString *)value;
+
+@end
 
 @interface SendDetailView : UIView
 
 @property (nonatomic, strong) UITextView *textView;
+
+@property (nonatomic, weak) id <SendDetailViewDelegate> delegate;
 
 @end

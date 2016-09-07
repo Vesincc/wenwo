@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB6F5BCE1D7541B6003A6647 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BCD1D7541B6003A6647 /* MeViewController.m */; };
+		BB6F5BD31D754309003A6647 /* MeHeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BD21D754309003A6647 /* MeHeadImageView.m */; };
+		BB6F5BD91D75679E003A6647 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BD81D75679E003A6647 /* DetailViewController.m */; };
+		BB6F5BDC1D75C6EC003A6647 /* MeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BDB1D75C6EC003A6647 /* MeView.m */; };
+		BB6F5BE01D7BF8EC003A6647 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BDF1D7BF8EC003A6647 /* UserInfo.m */; };
+		BB6F5BE31D7EB6EA003A6647 /* DetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BE21D7EB6EA003A6647 /* DetailSubView.m */; };
 		BBB027D41D5A033000221D9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB027D31D5A033000221D9C /* main.m */; };
 		BBB027D71D5A033000221D9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB027D61D5A033000221D9C /* AppDelegate.m */; };
 		BBB027DF1D5A033000221D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBB027DE1D5A033000221D9C /* Assets.xcassets */; };
@@ -98,6 +104,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB6F5BCC1D7541B6003A6647 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		BB6F5BCD1D7541B6003A6647 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		BB6F5BD11D754309003A6647 /* MeHeadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHeadImageView.h; sourceTree = "<group>"; };
+		BB6F5BD21D754309003A6647 /* MeHeadImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeHeadImageView.m; sourceTree = "<group>"; };
+		BB6F5BD71D75679E003A6647 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BB6F5BD81D75679E003A6647 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BB6F5BDA1D75C6EC003A6647 /* MeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeView.h; sourceTree = "<group>"; };
+		BB6F5BDB1D75C6EC003A6647 /* MeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeView.m; sourceTree = "<group>"; };
+		BB6F5BDE1D7BF8EC003A6647 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		BB6F5BDF1D7BF8EC003A6647 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		BB6F5BE11D7EB6EA003A6647 /* DetailSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSubView.h; sourceTree = "<group>"; };
+		BB6F5BE21D7EB6EA003A6647 /* DetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSubView.m; sourceTree = "<group>"; };
 		BBB027CF1D5A033000221D9C /* wenwobei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wenwobei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB027D31D5A033000221D9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BBB027D51D5A033000221D9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -272,6 +290,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB6F5BCF1D7541C4003A6647 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F5BCC1D7541B6003A6647 /* MeViewController.h */,
+				BB6F5BCD1D7541B6003A6647 /* MeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BB6F5BD01D7541D9003A6647 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F5BD11D754309003A6647 /* MeHeadImageView.h */,
+				BB6F5BD21D754309003A6647 /* MeHeadImageView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BB6F5BD41D7566BA003A6647 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F5BD51D7566CE003A6647 /* Controller */,
+				BB6F5BD61D7566D7003A6647 /* View */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		BB6F5BD51D7566CE003A6647 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F5BD71D75679E003A6647 /* DetailViewController.h */,
+				BB6F5BD81D75679E003A6647 /* DetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BB6F5BD61D7566D7003A6647 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F5BE11D7EB6EA003A6647 /* DetailSubView.h */,
+				BB6F5BE21D7EB6EA003A6647 /* DetailSubView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BB6F5BDD1D7BF8BD003A6647 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F5BDE1D7BF8EC003A6647 /* UserInfo.h */,
+				BB6F5BDF1D7BF8EC003A6647 /* UserInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		BBB027C61D5A033000221D9C = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +374,7 @@
 				BBB028101D5A090200221D9C /* Config.h */,
 				BBB028301D5E240600221D9C /* Vendors */,
 				BBB0280F1D5A08D700221D9C /* Public */,
+				BB6F5BD41D7566BA003A6647 /* Detail */,
 				BBB0280E1D5A059000221D9C /* Me */,
 				BBB0280D1D5A058200221D9C /* Like */,
 				BBB0280C1D5A056B00221D9C /* Send */,
@@ -340,6 +413,7 @@
 		BBB0280B1D5A054200221D9C /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				BB6F5BDD1D7BF8BD003A6647 /* Model */,
 				BBB0281B1D5A0AD000221D9C /* Controller */,
 				BBB028221D5A239000221D9C /* view */,
 			);
@@ -368,6 +442,8 @@
 		BBB0280E1D5A059000221D9C /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				BB6F5BCF1D7541C4003A6647 /* Controller */,
+				BB6F5BD01D7541D9003A6647 /* View */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -437,6 +513,8 @@
 			children = (
 				BBB028231D5A23A400221D9C /* CarouselView.h */,
 				BBB028241D5A23A400221D9C /* CarouselView.m */,
+				BB6F5BDA1D75C6EC003A6647 /* MeView.h */,
+				BB6F5BDB1D75C6EC003A6647 /* MeView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -830,6 +908,7 @@
 				BBB0282F1D5C842E00221D9C /* InfoNetworkModel.m in Sources */,
 				BBB0281E1D5A0B0D00221D9C /* DiscoverViewController.m in Sources */,
 				BBB028B01D5EF61400221D9C /* SDWebImageCompat.m in Sources */,
+				BB6F5BE31D7EB6EA003A6647 /* DetailSubView.m in Sources */,
 				BBB028B81D5EF61400221D9C /* UIImage+MultiFormat.m in Sources */,
 				BBB028C31D5F127B00221D9C /* SendTypeView.m in Sources */,
 				BBB028421D5E248900221D9C /* AFURLRequestSerialization.m in Sources */,
@@ -845,6 +924,7 @@
 				BBB028771D5E401B00221D9C /* MJRefreshAutoFooter.m in Sources */,
 				BBB028AD1D5EF61400221D9C /* MKAnnotationView+WebCache.m in Sources */,
 				BBB028CC1D5F12DE00221D9C /* SendShopNameView.m in Sources */,
+				BB6F5BDC1D75C6EC003A6647 /* MeView.m in Sources */,
 				BBB028441D5E248900221D9C /* AFURLSessionManager.m in Sources */,
 				BBB028C01D5F125500221D9C /* SendTotalView.m in Sources */,
 				BBB028C61D5F12AF00221D9C /* SendReasonView.m in Sources */,
@@ -855,10 +935,12 @@
 				BBB0287E1D5E401B00221D9C /* MJRefreshAutoStateFooter.m in Sources */,
 				BBB028CF1D5F131300221D9C /* SendPositionView.m in Sources */,
 				BBB028BA1D5EF61400221D9C /* UIImageView+HighlightedWebCache.m in Sources */,
+				BB6F5BCE1D7541B6003A6647 /* MeViewController.m in Sources */,
 				BBB028841D5E401B00221D9C /* MJRefreshStateHeader.m in Sources */,
 				BBB028161D5A0A9100221D9C /* LikeViewController.m in Sources */,
 				BBB028B61D5EF61400221D9C /* UIButton+WebCache.m in Sources */,
 				BBB0282C1D5C786A00221D9C /* SimpleTableViewCellModel.m in Sources */,
+				BB6F5BD91D75679E003A6647 /* DetailViewController.m in Sources */,
 				BBB028BB1D5EF61400221D9C /* UIImageView+WebCache.m in Sources */,
 				BBB0287D1D5E401B00221D9C /* MJRefreshAutoNormalFooter.m in Sources */,
 				BBB028DC1D5F69BC00221D9C /* DrawUtils.m in Sources */,
@@ -866,6 +948,8 @@
 				BBB028431D5E248900221D9C /* AFURLResponseSerialization.m in Sources */,
 				BBB028C91D5F12C800221D9C /* SendDetailView.m in Sources */,
 				BBB0287B1D5E401B00221D9C /* MJRefreshHeader.m in Sources */,
+				BB6F5BE01D7BF8EC003A6647 /* UserInfo.m in Sources */,
+				BB6F5BD31D754309003A6647 /* MeHeadImageView.m in Sources */,
 				BBB028401D5E248900221D9C /* AFNetworkReachabilityManager.m in Sources */,
 				BBB028D21D5F133600221D9C /* SendPriceView.m in Sources */,
 				BBB028811D5E401B00221D9C /* MJRefreshBackStateFooter.m in Sources */,

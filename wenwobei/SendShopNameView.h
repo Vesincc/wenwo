@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class SendShopNameView;
+
+@protocol SendShopNameViewDelegate <NSObject>
+
+- (void)sendShopNameView:(SendShopNameView *)view textField:(UITextField *)textField didEndEditValue:(NSString *)value;
+
+@end
+
 @interface SendShopNameView : UIView
 
 @property (nonatomic, strong) UITextField *textField;
+
+@property (nonatomic, weak) id <SendShopNameViewDelegate> delegate;
 
 @end

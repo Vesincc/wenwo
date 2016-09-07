@@ -54,8 +54,18 @@
         
         [self addSubview:note];
         
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textView)];
+        
+        [self addGestureRecognizer:gesture];
+        
     }
     return self;
+}
+
+- (void)textViewEnd {
+
+    [self.textView endEditing:YES];
+
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
@@ -70,6 +80,12 @@
     if (textView.text.length == 0) {
     
         [self.textView addSubview:self.textViewPlaceholder];
+    
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(sendDetailView:textView:didEndEditValue:)]) {
+    
+        [self.delegate sendDetailView:self textView:self.textView didEndEditValue:self.textView.text];
     
     }
 
