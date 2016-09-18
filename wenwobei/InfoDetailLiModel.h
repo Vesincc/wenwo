@@ -15,4 +15,6 @@
 
 + (NSArray *)arrayWithData:(NSArray *)data;
 
+- (instancetype)initWith:(NSString *)name vallue:(NSString *)val;
+
 @end

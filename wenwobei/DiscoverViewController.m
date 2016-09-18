@@ -18,16 +18,26 @@
 #import "DetailViewController.h"
 #import "MeView.h"
 #import "UserInfo.h"
+#import "DataBase.h"
+#import "CarouselDataModel.h"
+#import "SDCycleScrollView.h"
+#import "WebViewController.h"
+#import "TableHeaderView.h"
+#import "ImageTableViewCell.h"
 
-@interface DiscoverViewController() <UITableViewDelegate, UITableViewDataSource, CarouseViewDelegate>
+@interface DiscoverViewController() <UITableViewDelegate, UITableViewDataSource, SDCycleScrollViewDelegate, TableHeaderViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *carouselImages;
+@property (nonatomic, strong) NSMutableArray *carouselModel;
 @property (nonatomic, strong) MeView *meView;
 
 @property (nonatomic, strong) NSMutableArray *cellData;
-@property (nonatomic, assign) int pageNum;
 @property (nonatomic, strong) UIButton *titleButton;
+@property (nonatomic, strong) DataBase *dataBase;
+@property (nonatomic, strong) UserInfo *userInfo;
+
+@property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
+
 
 @end
 
@@ -37,19 +47,116 @@
    
 }
 
-- (void)viewDidLoad {
-    self.pageNum = 0;
-    self.cellData = [NSMutableArray array];
+- (UserInfo *)userInfo {
+
+    if (!_userInfo) {
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _userInfo = [UserInfo shareUserInfo];
+    
+    }
+    return _userInfo;
+
+}
+
+- (NSMutableArray *)cellData {
+
+    if (!_cellData) {
+    
+        _cellData = [NSMutableArray array];
         
-        NSBlockOperation *taskNetwork = [NSBlockOperation blockOperationWithBlock:^{
-            self.pageNum = 0;
-            [self.cellData removeAllObjects];
-            [self getInfoFromNetwork];
-        }];
-        [taskNetwork start];
-    }];
+        self.dataBase = [DataBase shareDataBase];
+        
+        NSArray *infoFromDB = [self.dataBase selectAllFromTable:@"allinfo"];
+        
+        NSArray *infos = [SimpleTableViewCellModel analysisFromInfoNetworkMode:infoFromDB];
+        
+        if (infos.count != 0) {
+            
+            [_cellData addObjectsFromArray:infos];
+            
+        } else {
+        
+            [self getInfoFromNetworkWithType:@"updata"];
+        
+        }
+        
+    
+    }
+    
+    return _cellData;
+    
+
+}
+
+- (NSMutableArray *)carouselModel {
+
+    if (!_carouselModel) {
+    
+        _carouselModel = [NSMutableArray array];
+        
+        _carouselModel = [[NSMutableArray alloc] initWithArray:[self.dataBase selectAllFromTable:@"carousel"]];
+        NSLog(@"%@", _carouselModel);
+        
+        [self cycleScrollView];
+        
+        if (_carouselModel.count <= 0) {
+            
+            [self getCarouselImageUrl];
+        
+        }
+        
+    
+    }
+    
+    return _carouselModel;
+    
+
+}
+
+- (SDCycleScrollView *)cycleScrollView {
+
+    if (!_cycleScrollView) {
+        
+        NSMutableArray *imageStrings = [NSMutableArray array];
+        
+        for (int i = 0; i < self.carouselModel.count; i++) {
+            
+            CarouselDataModel *model = self.carouselModel[i];
+            [imageStrings addObject:model.carouselImage];
+            
+        }
+        
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 180) delegate:self placeholderImage:[UIImage imageNamed:@"default_userhead"]];
+        
+        _cycleScrollView.imageURLStringsGroup = imageStrings;
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 290)];
+        view.backgroundColor = [UIColor whiteColor];
+        
+        TableHeaderView *tableHeaderView = [[TableHeaderView alloc] initWithFrame:CGRectMake(0, 180, SCREEN_WIDTH, 110)];
+        tableHeaderView.delegate = self;
+        [view addSubview:tableHeaderView];
+        
+        [view addSubview:_cycleScrollView];
+        
+        self.tableView.tableHeaderView = view;
+
+    
+    
+    }
+    
+    return _cycleScrollView;
+
+}
+
+- (void)viewDidLoad {
+    
+        
+    [self userInfo];
+    
+    [self cellData];
+    
+    [self carouselModel];
     
     if (self.cellData.count == 0) {
         [self.tableView.mj_header beginRefreshing];
@@ -79,18 +186,27 @@
     UIBarButtonItem *titleButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.titleButton];
     [self.navigationItem setLeftBarButtonItem:titleButtonItem];
     
-    [self carouselImages];
-    
     [self tableView];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        NSBlockOperation *taskNetwork = [NSBlockOperation blockOperationWithBlock:^{
+//            [self.cellData removeAllObjects];
+            [self getInfoFromNetworkWithType:@"updata"];
+            [self getCarouselImageUrl];
+        }];
+        
+        [taskNetwork start];
+    }];
     
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         NSBlockOperation *taskNetwork = [NSBlockOperation blockOperationWithBlock:^{
-            [self getInfoFromNetwork];
+            [self getInfoFromNetworkWithType:@"add"];
         }];
         [taskNetwork start];
     }];
-    [self.tableView.mj_footer endRefreshing];
+
     
     
     [self meView];
@@ -106,53 +222,150 @@
 
 }
 
-- (void)getInfoFromNetwork {
+- (void)getInfoFromNetworkWithType:(NSString *)type {
     
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manger = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    if ([type isEqualToString:@"updata"]) {
     
-    NSString *urlStr = @"http://www.wenwobei.com/ask/allask";
+        self.userInfo.discoverPageNum = 0;
+        [self.dataBase updataUserInfo];
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    }
     
-    params[@"username"] = @"573b0c63ad5b950057533669";
-    params[@"size"] = @"20";
-    params[@"page"] = [NSString stringWithFormat:@"%d", self.pageNum];
-    
-    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlStr parameters:params error:nil];
-    
-    NSURLSessionDataTask *dataTask = [manger dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@", error);
-        } else {
-            
-//            NSLog(@"%@", responseObject);
-            NSDictionary *resulte = responseObject;
-            NSString *resultCode = [NSString stringWithFormat:@"%@", [resulte valueForKey:@"code"]];
-//            NSLog(@"%@", resultCode.class);
-            if ([resultCode  isEqualToString: @"200"]) {
-            
-                NSArray *data = [resulte valueForKey:@"data"];
+    @try {
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        AFURLSessionManager *manger = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+        
+        NSString *urlStr = @"http://www.wenwobei.com/ask/allask";
+        
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        
+        params[@"username"] = self.userInfo.userID;
+        params[@"size"] = @"20";
+        params[@"page"] = [NSString stringWithFormat:@"%d", self.userInfo.discoverPageNum];
+        
+        NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlStr parameters:params error:nil];
+        
+        NSURLSessionDataTask *dataTask = [manger dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", error);
+            } else {
                 
-                NSArray *infoArray = [InfoNetworkModel analysisNetworkData:data];
+                NSDictionary *resulte = responseObject;
+                NSString *resultCode = [NSString stringWithFormat:@"%@", [resulte valueForKey:@"code"]];
+                if ([resultCode  isEqualToString: @"200"]) {
+                    
+                    NSArray *data = [resulte valueForKey:@"data"];
+                    
+                    NSArray *infoArray = [InfoNetworkModel analysisNetworkData:data];
+                    
+                    if (self.userInfo.discoverPageNum == 0) {
+                        
+                        [self.dataBase clearForTable:@"allinfo"];
+                        [self.cellData removeAllObjects];
+                        [self.tableView reloadData];
+                    
+                    }
+                    
+                    [self.dataBase insertArray:infoArray tableName:@"allinfo"];
+                    
+                    [self.cellData addObjectsFromArray:[SimpleTableViewCellModel analysisFromInfoNetworkMode:infoArray]];
+                    
+                    [self.tableView reloadData];
+                    self.userInfo.discoverPageNum++;
+                    [self.dataBase updataUserInfo];
+                    
+                    [self.tableView.mj_header endRefreshing];
+                    [self.tableView.mj_footer endRefreshing];
+                    
+                }
                 
-                [self.cellData addObjectsFromArray:[SimpleTableViewCellModel analysisFromInfoNetworkMode:infoArray]];
-                
-                self.pageNum++;
-                [self.tableView reloadData];
-                [self.tableView.mj_header endRefreshing];
-                [self.tableView.mj_footer endRefreshing];
             }
-            
-        }
-    }];
-    [dataTask resume];
+        }];
+        [dataTask resume];
+        
+    } @catch (NSException *exception) {
+        
+    }
+
+}
+
+- (NSArray *)getCarouselImageUrl {
+    
+    NSMutableArray *carouelModel = [NSMutableArray array];
+
+    @try {
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        AFURLSessionManager *manger = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+        
+        NSString *urlStr = @"http://www.wenwobei.com/carousel/getcarouselinfo";
+        
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        
+        params[@"username"] = self.userInfo.userID;
+        params[@"type"] = @"show";
+        
+        NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlStr parameters:params error:nil];
+        
+        NSURLSessionDataTask *dataTask = [manger dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", error);
+            } else {
+                
+                NSDictionary *resulte = responseObject;
+                
+//                NSLog(@"%@", resulte);
+                NSString *resultCode = [NSString stringWithFormat:@"%@", [resulte valueForKey:@"code"]];
+                if ([resultCode  isEqualToString: @"200"]) {
+                    
+                    [carouelModel addObjectsFromArray:[CarouselDataModel initWithData:[resulte valueForKey:@"data"]]];
+                    
+                    
+                    
+                    NSMutableArray *imageStrings = [NSMutableArray array];
+                    
+                    [self.carouselModel removeAllObjects];
+                    [self.dataBase clearForTable:@"carousel"];
+                    
+                    for (int i = 0; i < carouelModel.count; i++) {
+                        CarouselDataModel *model = carouelModel[i];
+                        [imageStrings addObject:model.carouselImage];
+                        
+                        [self.carouselModel addObject:carouelModel[i]];
+                        
+                        [self.dataBase insert:carouelModel[i] talbeName:@"carousel"];
+                        
+                        
+                    }
+                    
+                    self.cycleScrollView.imageURLStringsGroup = imageStrings;
+                    
+                    
+                    
+                }
+                
+            }
+        }];
+        [dataTask resume];
+        
+        
+    } @catch (NSException *exception) {
+        
+    }
+    
+    return carouelModel;
 
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    return 125;
+    SimpleTableViewCellModel *model = self.cellData[indexPath.row];
+    if (model.askImage.count == 0) {
+        return 120;
+    } else {
+    
+        return 320;
+        
+    }
 
 }
 
@@ -165,15 +378,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    SimpleTableViewCell *cell = [[SimpleTableViewCell alloc] initWithReusedID:@"discoverTableViewCell"];
+    ImageTableViewCell *cell = [ImageTableViewCell cellWithTableView:tableView identifier:@"cell" cellData:self.cellData[indexPath.row]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.cellData = self.cellData[indexPath.row];
     
-    SimpleTableViewCellModel *model = self.cellData[indexPath.row];
-    
-    [cell.userHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.createByUrl] placeholderImage:[UIImage imageNamed:@"default_userhead"]];
+//    SimpleTableViewCellModel *model = self.cellData[indexPath.row];
+//    
+//    [cell.photoImageView sd_setImageWithURL:[NSURL URLWithString:model.askImage[0]] placeholderImage:[UIImage imageNamed:@"default_userhead"]];
+//    
+//    [cell.userHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.createByUrl] placeholderImage:[UIImage imageNamed:@"defaule_userhead"]];
     
     return cell;
     
@@ -187,9 +402,11 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         
-        CarouselView *carouselView = [[CarouselView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 136) imageArray:self.carouselImages];
-        carouselView.delegate = self;
-        _tableView.tableHeaderView = carouselView;
+//        CarouselView *carouselView = [[CarouselView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 136) imageArrayString:<#(NSArray *)#>];
+//        carouselView.delegate = self;
+//        _tableView.tableHeaderView = carouselView;
+        
+        
         
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = HQ_RGBA(244, 232, 227, 1);
@@ -203,29 +420,16 @@
 
 }
 
--(NSMutableArray *)carouselImages {
 
-    if (!_carouselImages) {
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+
+    NSLog(@"click----------->%ld", index);
     
-        _carouselImages = [NSMutableArray array];
-        
-        for (int i = 0; i < 3; i++) {
-        
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d_banner", i+1]];
-            
-            [_carouselImages addObject:image];
-        
-        }
     
-    }
-    return _carouselImages;
+    WebViewController *vc = [[WebViewController alloc] initWithData:self.carouselModel[index]];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 
-}
-
--(void) carouselView:(CarouselView *)view clickImageView:(UIImageView *)imageView index:(NSInteger)index {
-
-    NSLog(@"click--->%ld", index);
-    
 }
 
 - (void)navigationButtonClick:(UIBarButtonItem *)buttton {
@@ -273,6 +477,10 @@
 
     DetailViewController *vc = [[DetailViewController alloc] initWithData:self.cellData[indexPath.row]];
     
+//    InfoNetworkModel *model = [[InfoNetworkModel alloc] initWithSimpleTableViewCellModel:self.cellData[indexPath.row]];
+    
+//    NSLog(@"%@", model);
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 
 
@@ -313,6 +521,13 @@
         
     }];
 
+}
+
+- (void)tableHeaderView:(TableHeaderView *)view didClick:(UIView *)clickView atIndex:(NSInteger)index {
+
+    NSLog(@"click------>%ld", index);
+    
+    
 }
 
 @end

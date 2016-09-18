@@ -27,4 +27,16 @@
     return array;
 }
 
+- (instancetype)initWith:(NSString *)name vallue:(NSString *)val
+{
+    self = [super init];
+    if (self) {
+        
+        self.name = name;
+        self.val = val;
+        
+    }
+    return self;
+}
+
 @end

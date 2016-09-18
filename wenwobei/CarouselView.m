@@ -7,11 +7,12 @@
 //
 
 #import "CarouselView.h"
+#import "SDWebImage/UIImageView+WebCache.h"
 
 @interface CarouselView() <UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *images;
-@property (nonatomic, strong) UIImageView *imageView;
+
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageController;
 
@@ -40,6 +41,27 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame imageArrayString:(NSArray *)string
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.images = [[NSMutableArray alloc] initWithArray:string];
+        
+        [self.images insertObject:string[string.count-1] atIndex:0];
+        [self.images addObject:string[0]];
+        
+//        NSLog(@"%@", string);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self scrollView];
+            
+        });
+    
+        
+    }
+    return self;
+}
+
 -(UIScrollView *)scrollView {
 
     if (!_scrollView) {
@@ -53,35 +75,38 @@
         _scrollView.delegate = self;
         _scrollView.bounces = NO;
         
+        self.imageViews = [NSMutableArray array];
         
         for (int i = 0; i < self.images.count; i++) {
         
-            self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*self.frame.size.width, 0, self.frame.size.width, self.scrollView.frame.size.height)];
+            UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*self.frame.size.width, 0, self.frame.size.width, self.scrollView.frame.size.height)];
             
-            self.imageView.userInteractionEnabled = YES;
+            imageView.userInteractionEnabled = YES;
             
-            self.imageView.image = self.images[i];
+            NSLog(@"%@", self.images[i]);
+            
+            [imageView sd_setImageWithURL:[NSURL URLWithString:self.images[i]]];
             
             UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(GestureAction:)];
             if (i == 0) {
                 
-                self.imageView.tag = self.images.count-1;
+                imageView.tag = self.images.count-1;
             
             } else if (i == self.images.count - 1) {
                 
-                self.imageView.tag = 0;
+                imageView.tag = 0;
             
             } else {
             
-                self.imageView.tag = i-1;
+                imageView.tag = i-1;
             
             }
             
             
             
-            [self.imageView addGestureRecognizer:gesture];
-            
-            [_scrollView addSubview:self.imageView];
+            [imageView addGestureRecognizer:gesture];
+            [self.imageViews addObject:imageView];
+            [_scrollView addSubview:self.imageViews[i]];
         
         }
         

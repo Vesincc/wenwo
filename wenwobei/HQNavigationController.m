@@ -9,7 +9,7 @@
 #import "HQNavigationController.h"
 #import "Config.h"
 
-@implementation HQNavigationController 
+@implementation HQNavigationController
 
 - (void)viewDidLayoutSubviews {
     
@@ -25,8 +25,6 @@
     
     [self.navigationBar setTintColor:TITLE_COLER];
     
-//    self.navigationBar.backItem
-    
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
@@ -34,13 +32,16 @@
 //    [self.navigationController.navigationBar setHidden:NO];
 //    NSLog(@"%@", viewController);
     
+
     [super pushViewController:viewController animated:animated];
     
-    if ([NSStringFromClass([viewController class]) isEqualToString:@"DetailViewController"]) {
-    
-        self.tabBarController.tabBar.hidden = YES;
-        
-    }
+//    if ([NSStringFromClass([viewController class]) isEqualToString:@"DetailViewController"] || [NSStringFromClass([viewController class]) isEqualToString:@"WebViewController"]) {
+//    
+//        [UIView animateWithDuration:0.2 animations:^{
+//            self.tabBarController.tabBar.center = CGPointMake(self.tabBarController.tabBar.center.x, self.tabBarController.tabBar.center.y + self.tabBarController.tabBar.frame.size.height);
+//        }];
+//        
+//    }
     
     
     
@@ -48,11 +49,13 @@
 
 - (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated {
     
-    if ([NSStringFromClass([self.topViewController class]) isEqualToString:@"DetailViewController"]) {
-    
-        self.tabBarController.tabBar.hidden = NO;
-        
-    }
+//    if ([NSStringFromClass([self.topViewController class]) isEqualToString:@"DetailViewController"]) {
+//    
+//        [UIView animateWithDuration:0.3 animations:^{
+//            self.tabBarController.tabBar.center = CGPointMake(SCREEN_WIDTH/2, self.tabBarController.tabBar.center.y);
+//        }];
+//        
+//    }
 
     return [super popViewControllerAnimated:animated];
 

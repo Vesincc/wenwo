@@ -21,8 +21,8 @@
         self.GeoY = [[NSString alloc] init];
         self.askContentHide = [[NSString alloc] init];
         self.askContentShowDetail = [[NSString alloc] init];
-        self.askContentShowDetailLi = [NSArray array];
-        self.askImage = [[NSString alloc] init];
+        self.askContentShowDetailLi = [NSMutableArray array];
+        self.askImage = [NSMutableArray array];
         self.askIsFree = [[NSString alloc] init];
         self.askLevel = [[NSString alloc] init];
         self.askPositionCity = [[NSString alloc] init];
@@ -44,7 +44,7 @@
         self.shopName = [[NSString alloc] init];
         self.staus = [[NSString alloc] init];
         self.updatedAt = [[NSString alloc] init];
-        self.askTag = [[NSString alloc] init];
+        self.askTag = [NSMutableArray array];
         
         
     }
@@ -67,50 +67,72 @@
 
 }
 
-+ (NSArray *)analysisFromInfoNetworkMode:(NSArray *)infoArray {
-
-    NSMutableArray *array = [NSMutableArray array];
-    
-    for (InfoNetworkModel *info in infoArray) {
+- (instancetype)initWithInfoNetworkModel:(InfoNetworkModel *)info
+{
+    self = [super init];
+    if (self) {
         
-        SimpleTableViewCellModel *cellData = [[SimpleTableViewCellModel alloc] init];
-        cellData.GeoX = info.GeoX;
-        cellData.GeoY = info.GeoY;
-        cellData.askContentHide = info.askContentHide;
-        cellData.askIsFree = info.askIsFree;
-        cellData.askLevel = info.askLevel;
-        cellData.askPrice = info.askPrice;
-        cellData.askReason = info.askReason;
-        cellData.askType = info.askType;
-        cellData.buyNum = info.buyNum;
-        cellData.createBy = info.createBy;
-        cellData.createByName = info.createByName;
-        cellData.createByUrl = info.createByUrl;
-        cellData.createdAt = info.createdAt;
-        cellData.likeNum = info.likeNum;
-        cellData.liked = info.liked;
-        cellData.objectId = info.objectId;
-        cellData.score = info.score;
-        cellData.shopName = info.shopName;
-        cellData.staus = info.staus;
-        cellData.updatedAt = info.updatedAt;
+        self.GeoX = info.GeoX;
+        self.GeoY = info.GeoY;
+        self.askContentHide = info.askContentHide;
+        self.askIsFree = info.askIsFree;
+        self.askLevel = info.askLevel;
+        self.askPrice = info.askPrice;
+        self.askReason = info.askReason;
+        self.askType = info.askType;
+        self.buyNum = info.buyNum;
+        self.createBy = info.createBy;
+        self.createByName = info.createByName;
+        self.createByUrl = info.createByUrl;
+        self.createdAt = info.createdAt;
+        self.likeNum = info.likeNum;
+        self.liked = info.liked;
+        self.objectId = info.objectId;
+        self.score = info.score;
+        self.shopName = info.shopName;
+        self.staus = info.staus;
+        self.updatedAt = info.updatedAt;
         
         
         @try {
             
-            NSDictionary *contentDetail = [self dictionaryWithJsonString:info.askContentShow];
+            NSDictionary *contentDetail = [SimpleTableViewCellModel dictionaryWithJsonString:info.askContentShow];
             
             if (contentDetail) {
                 
-                cellData.askContentShowDetail = [contentDetail valueForKey:@"detail"];
+                self.askContentShowDetail = [contentDetail valueForKey:@"detail"];
                 
                 @try {
                     
-                    cellData.askContentShowDetailLi = [InfoDetailLiModel arrayWithData:[self arrayWithJsonString:[contentDetail valueForKey:@"detailLi"]]];
+                    self.askContentShowDetailLi = [InfoDetailLiModel arrayWithData:[SimpleTableViewCellModel arrayWithJsonString:[contentDetail valueForKey:@"detailLi"]]];
                     
                 } @catch (NSException *exception) {
                     
-                    NSLog(@"解析detailLi");
+                    
+                    @try {
+                        
+                        NSArray *temp = [contentDetail valueForKey:@"detailLi"];
+                        
+                        
+                        
+                        NSMutableArray *ok = [NSMutableArray array];
+                        
+                        for (int i = 0; i < temp.count; i++) {
+                            
+                            InfoDetailLiModel *model = [[InfoDetailLiModel alloc] initWith:[temp[i] valueForKey:@"name"] vallue:[temp[i] valueForKey:@"val"]];
+                            
+                            [ok addObject:model];
+                            
+                        }
+                        
+                        self.askTag = ok;
+                        
+                        
+                        
+                        
+                    } @catch (NSException *exception) {
+                        NSLog(@"解析detailLi");
+                    }
                     
                 }
                 
@@ -126,9 +148,10 @@
         
         @try {
             
-            cellData.askImage = [[self dictionaryWithJsonString:info.askImage] valueForKey:@"image"][0];
-//            NSLog(@"%@",info.askImage);
-//            NSLog(@"%@",cellData.askImage);
+            self.askImage = [[SimpleTableViewCellModel arrayWithJsonString:info.askImage] valueForKey:@"image"];
+            //            NSLog(@"%@",info.askImage);
+            //            NSLog(@"%@",cellData.askImage[0]);
+            
             
         } @catch (NSException *exception) {
             
@@ -138,12 +161,12 @@
         
         @try {
             
-            NSDictionary *position = [self dictionaryWithJsonString:info.askPosition];
-            cellData.askPositionCity = [position valueForKey:@"city"];
-            cellData.askPositionDetail = [position valueForKey:@"detail"];
-            cellData.askPositionDistrict = [position valueForKey:@"district"];
-            cellData.askPositionProvince = [position valueForKey:@"province"];
-            cellData.askPositionTownship = [position valueForKey:@"township"];
+            NSDictionary *position = [SimpleTableViewCellModel dictionaryWithJsonString:info.askPosition];
+            self.askPositionCity = [position valueForKey:@"city"];
+            self.askPositionDetail = [position valueForKey:@"detail"];
+            self.askPositionDistrict = [position valueForKey:@"district"];
+            self.askPositionProvince = [position valueForKey:@"province"];
+            self.askPositionTownship = [position valueForKey:@"township"];
             
         } @catch (NSException *exception) {
             
@@ -153,7 +176,11 @@
         
         @try {
             
-            cellData.askTag = [(NSDictionary *)([self arrayWithJsonString:info.askTagStr][0]) valueForKey:@"tag_name"];
+            //            NSLog(@"%@",  ([self arrayWithJsonString:info.askTagStr]));
+            
+            self.askTag = [([SimpleTableViewCellModel arrayWithJsonString:info.askTagStr]) valueForKey:@"tag_name"];
+            
+            //            NSLog(@"%@", cellData.askTag);
             
         } @catch (NSException *exception) {
             
@@ -161,13 +188,18 @@
             
         }
         
-            
         
+    }
+    return self;
+}
+
++ (NSArray *)analysisFromInfoNetworkMode:(NSArray *)infoArray {
+
+    NSMutableArray *array = [NSMutableArray array];
+    
+    for (InfoNetworkModel *info in infoArray) {
         
-//        NSLog(@"%d", [cellData isEqualToKey:@"askTag" value:@"杂酱面"]);
-        
-        
-        
+        SimpleTableViewCellModel *cellData = [[SimpleTableViewCellModel alloc] initWithInfoNetworkModel:info];
         
         [array addObject:cellData];
         

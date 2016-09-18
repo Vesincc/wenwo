@@ -7,34 +7,38 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class SimpleTableViewCellModel;
 @interface InfoNetworkModel : NSObject
 
-@property (nonatomic, copy) NSString *GeoX;
-@property (nonatomic, copy) NSString *GeoY;
-@property (nonatomic, copy) NSString *askContentHide;
-@property (nonatomic, copy) id askContentShow;
-@property (nonatomic, copy) NSString *askImage;
-@property (nonatomic, copy) NSString *askIsFree;
-@property (nonatomic, copy) NSString *askLevel;
-@property (nonatomic, copy) NSString *askPosition;
-@property (nonatomic, copy) NSString *askPrice;
-@property (nonatomic, copy) NSString *askReason;
-@property (nonatomic, copy) NSString *askTagStr;
-@property (nonatomic, copy) NSString *askType;
-@property (nonatomic, copy) NSString *buyNum;
-@property (nonatomic, copy) NSString *createBy;
-@property (nonatomic, copy) NSString *createByName;
-@property (nonatomic, copy) NSString *createByUrl;
-@property (nonatomic, copy) NSString *createdAt;
-@property (nonatomic, copy) NSString *likeNum;
+@property (nonatomic, strong) NSString *GeoX;
+@property (nonatomic, strong) NSString *GeoY;
+@property (nonatomic, strong) NSString *askContentHide;
+@property (nonatomic, strong) NSString *askContentShow;
+@property (nonatomic, strong) NSString *askImage;
+@property (nonatomic, strong) NSString *askIsFree;
+@property (nonatomic, strong) NSString *askLevel;
+@property (nonatomic, strong) NSString *askPosition;
+@property (nonatomic, strong) NSString *askPrice;
+@property (nonatomic, strong) NSString *askReason;
+@property (nonatomic, strong) NSString *askTagStr;
+@property (nonatomic, strong) NSString *askType;
+@property (nonatomic, strong) NSString *buyNum;
+@property (nonatomic, strong) NSString *createBy;
+@property (nonatomic, strong) NSString *createByName;
+@property (nonatomic, strong) NSString *createByUrl;
+@property (nonatomic, strong) NSString *createdAt;
+@property (nonatomic, strong) NSString *likeNum;
 @property (nonatomic, assign) int liked;
-@property (nonatomic, copy) NSString *objectId;
-@property (nonatomic, copy) NSString *score;
-@property (nonatomic, copy) NSString *shopName;
-@property (nonatomic, copy) NSString *staus;
-@property (nonatomic, copy) NSString *updatedAt;
+@property (nonatomic, strong) NSString *objectId;
+@property (nonatomic, strong) NSString *score;
+@property (nonatomic, strong) NSString *shopName;
+@property (nonatomic, strong) NSString *staus;
+@property (nonatomic, strong) NSString *updatedAt;
 
 + (NSArray *)analysisNetworkData:(NSArray *)networkData;
+
+- (instancetype)initWithSimpleTableViewCellModel:(SimpleTableViewCellModel *)model;
+
+- (instancetype)initWithID:(NSString *)objectID GeoX:(NSString *)GeoX GeoY:(NSString *)GeoY askContentHide:(NSString *)askContentHide askContentShow:(NSString *)askContentShow askImage:(NSString *)askImage askIsFree:(NSString *)askIsFree askLevel:(NSString *)askLevel askPosition:(NSString *)askPosition askPrice:(NSString *)askPrice askReason:(NSString *)askReason askTagStr:(NSString *)askTagStr askType:(NSString *)askType buyNum:(NSString *)buyNum createBy:(NSString *)createBy createByName:(NSString *)createByName createByUrl:(NSString *)createByUrl createdAt:(NSString *)createdAt likeNum:(NSString *)likeNum liked:(int)liked objectId:(NSString *)objectId score:(NSString *)score shopName:(NSString *)shopName staus:(NSString *)staus updatedAt:(NSString *)updatedAt;
 
 @end

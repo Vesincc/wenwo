@@ -635,7 +635,7 @@
 
 - (void)sendTypeView:(SendTypeView *)sendTypeView textField:(UITextField *)textField value:(NSString *)value {
 
-    self.sendData.askTag = value;
+    self.sendData.askTag = [[NSArray alloc] initWithObjects:value, nil];
 
 
 }

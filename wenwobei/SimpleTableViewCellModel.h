@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class InfoNetworkModel;
 @interface SimpleTableViewCellModel : NSObject
 
 @property (nonatomic, copy) NSString *GeoX;
@@ -17,7 +18,7 @@
 @property (nonatomic, copy) NSString *askContentShowDetail;
 @property (nonatomic, copy) NSArray *askContentShowDetailLi;
 
-@property (nonatomic, copy) NSString *askImage;
+@property (nonatomic, copy) NSArray *askImage;
 @property (nonatomic, copy) NSString *askIsFree;
 @property (nonatomic, copy) NSString *askLevel;
 
@@ -43,9 +44,11 @@
 @property (nonatomic, copy) NSString *staus;
 @property (nonatomic, copy) NSString *updatedAt;
 
-@property (nonatomic, copy) NSString *askTag;
+@property (nonatomic, copy) NSArray *askTag;
 
 - (BOOL)isEqualToKey:(NSString *)key value:(NSString *)value;
+
+- (instancetype)initWithInfoNetworkModel:(InfoNetworkModel *)info;
 
 + (NSArray *)analysisFromInfoNetworkMode:(NSArray *)infoArray;
 

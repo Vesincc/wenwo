@@ -327,33 +327,18 @@
 }
 
 - (void)setCellData:(SimpleTableViewCellModel *)cellData {
-
-//    if (cellData.createByUrl != nil) {
-//        
-//        self.userHeadImageView.image = [UIImage imageNamed:@"default_userhead"];
-//        
-//        NSBlockOperation *taskLoadImage = [NSBlockOperation blockOperationWithBlock:^{
-//            NSURL *imageUrl = [NSURL URLWithString:cellData.createByUrl];
-//            NSData *dataImage = [NSData dataWithContentsOfURL:imageUrl];
-//            self.userHeadImageView.image = [UIImage imageWithData:dataImage];
-//        }];
-//        [taskLoadImage start];
-//    }
-    
-  
-    
     
     self.likeNum.text = cellData.likeNum;
-    
-    self.titleLable.text = cellData.askTag;
-    
+
+    self.titleLable.text = cellData.askTag[0];
+
     if ([cellData.score intValue] < 10) {
-    
+        
         [self.priceInfoLable removeFromSuperview];
         [self addSubview:self.freeLable];
-    
+        
     } else {
-    
+        
         self.priceInfoLable.text = [NSString stringWithFormat:@"%@元瞅瞅", cellData.askPrice];
         [self.freeLable removeFromSuperview];
         [self addSubview:self.priceInfoLable];
@@ -367,14 +352,15 @@
     self.timeLable.text = [cellData.updatedAt substringToIndex:10];
     
     if (cellData.liked == 1) {
-    
+        
         self.likeIcon.image = [UIImage imageNamed:@"like_selected"];
-    
+        
     } else {
-    
+        
         self.likeIcon.image = [UIImage imageNamed:@"like"];
-    
+        
     }
+    
     
 }
 

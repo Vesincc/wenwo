@@ -9,6 +9,7 @@
 #import "MeView.h"
 #import "Config.h"
 #import "UserInfo.h"
+#import "SDWebImage/UIImageView+WebCache.h"
 
 @interface MeView() <UITableViewDelegate, UITableViewDataSource>
 
@@ -87,7 +88,14 @@
         self.backgroundImage.layer.zPosition = 0;
         _infoView.layer.masksToBounds = YES;
         
-        self.userHeadImageView = [[UIImageView alloc] initWithImage:self.userinfo.userHeadImage];
+        self.userHeadImageView = [[UIImageView alloc] init];
+        if (self.userinfo.userHeadUrl == nil) {
+            [self.userHeadImageView setImage:[UIImage imageNamed:@"default_userhead"]];
+            
+        } else {
+        
+            [self.userHeadImageView sd_setImageWithURL:[NSURL URLWithString:self.userinfo.userHeadUrl]];
+        }
         self.userHeadImageView.frame = CGRectMake(0, 0, 80, 80);
         self.userHeadImageView.center = CGPointMake(_infoView.center.x, _infoView.center.y - 40);
         self.userHeadImageView.layer.cornerRadius = self.userHeadImageView.frame.size.width / 2;

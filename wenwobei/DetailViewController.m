@@ -12,7 +12,7 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "DetailSubView.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UINavigationBarDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = self.detailData.askTag;
+    self.title = self.detailData.askTag[0];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -51,6 +51,7 @@
     
     
 }
+
 
 - (DetailSubView *)addressView {
 
@@ -151,9 +152,9 @@
         imageView.layer.masksToBounds = YES;
         @try {
             
-            if (![self.detailData.askImage isEqualToString:@""]) {
+            if (![self.detailData.askImage[0] isEqualToString:@""]) {
             
-                [imageView sd_setImageWithURL:[NSURL URLWithString:self.detailData.askImage] placeholderImage:[UIImage imageNamed:@"default_userhead"]];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:self.detailData.askImage[0]] placeholderImage:[UIImage imageNamed:@"default_userhead"]];
                 
             } else {
             

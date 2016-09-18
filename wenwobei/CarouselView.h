@@ -21,8 +21,12 @@
 @property (nonatomic, assign) BOOL autoCarousel;
 @property (nonatomic, assign) float carouselTime;
 
+@property (nonatomic, strong) NSMutableArray *imageViews;
+
 @property (nonatomic, weak) id <CarouseViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame imageArray:(NSArray *)images;
+
+- (instancetype)initWithFrame:(CGRect)frame imageArrayString:(NSArray *)string;
 
 @end

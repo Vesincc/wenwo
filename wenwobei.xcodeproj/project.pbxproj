@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0FBE391D7FF534004E09DD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FBE2E1D7FF534004E09DD /* FMDatabase.m */; };
+		BB0FBE3A1D7FF534004E09DD /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FBE301D7FF534004E09DD /* FMDatabaseAdditions.m */; };
+		BB0FBE3B1D7FF534004E09DD /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FBE321D7FF534004E09DD /* FMDatabasePool.m */; };
+		BB0FBE3C1D7FF534004E09DD /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FBE341D7FF534004E09DD /* FMDatabaseQueue.m */; };
+		BB0FBE3D1D7FF534004E09DD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FBE371D7FF534004E09DD /* FMResultSet.m */; };
+		BB0FBE3E1D7FF534004E09DD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB0FBE381D7FF534004E09DD /* Info.plist */; };
+		BB0FBE451D7FFE48004E09DD /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FBE441D7FFE48004E09DD /* DataBase.m */; };
+		BB0FBE471D8002F2004E09DD /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0FBE461D8002F2004E09DD /* libsqlite3.0.tbd */; };
+		BB57A10C1D8B0C5A002E9040 /* CarouselDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A10B1D8B0C5A002E9040 /* CarouselDataModel.m */; };
+		BB57A11D1D8BEDCB002E9040 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A1101D8BEDCB002E9040 /* TAAbstractDotView.m */; };
+		BB57A11E1D8BEDCB002E9040 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A1121D8BEDCB002E9040 /* TAAnimatedDotView.m */; };
+		BB57A11F1D8BEDCB002E9040 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A1141D8BEDCB002E9040 /* TADotView.m */; };
+		BB57A1201D8BEDCB002E9040 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A1161D8BEDCB002E9040 /* TAPageControl.m */; };
+		BB57A1211D8BEDCB002E9040 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A1181D8BEDCB002E9040 /* SDCollectionViewCell.m */; };
+		BB57A1221D8BEDCB002E9040 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A11A1D8BEDCB002E9040 /* SDCycleScrollView.m */; };
+		BB57A1231D8BEDCB002E9040 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A11C1D8BEDCB002E9040 /* UIView+SDExtension.m */; };
+		BB57A1271D8C4D25002E9040 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A1261D8C4D25002E9040 /* WebViewController.m */; };
+		BB57A12D1D8EFC55002E9040 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A12C1D8EFC55002E9040 /* TableHeaderView.m */; };
+		BB57A1301D8F068D002E9040 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB57A12F1D8F068D002E9040 /* ImageTableViewCell.m */; };
 		BB6F5BCE1D7541B6003A6647 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BCD1D7541B6003A6647 /* MeViewController.m */; };
 		BB6F5BD31D754309003A6647 /* MeHeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BD21D754309003A6647 /* MeHeadImageView.m */; };
 		BB6F5BD91D75679E003A6647 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6F5BD81D75679E003A6647 /* DetailViewController.m */; };
@@ -104,6 +123,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB0FBE2D1D7FF534004E09DD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		BB0FBE2E1D7FF534004E09DD /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		BB0FBE2F1D7FF534004E09DD /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		BB0FBE301D7FF534004E09DD /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		BB0FBE311D7FF534004E09DD /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		BB0FBE321D7FF534004E09DD /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		BB0FBE331D7FF534004E09DD /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		BB0FBE341D7FF534004E09DD /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		BB0FBE351D7FF534004E09DD /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		BB0FBE361D7FF534004E09DD /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		BB0FBE371D7FF534004E09DD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		BB0FBE381D7FF534004E09DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB0FBE431D7FFE48004E09DD /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
+		BB0FBE441D7FFE48004E09DD /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
+		BB0FBE461D8002F2004E09DD /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		BB57A10A1D8B0C5A002E9040 /* CarouselDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselDataModel.h; sourceTree = "<group>"; };
+		BB57A10B1D8B0C5A002E9040 /* CarouselDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselDataModel.m; sourceTree = "<group>"; };
+		BB57A10F1D8BEDCB002E9040 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		BB57A1101D8BEDCB002E9040 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		BB57A1111D8BEDCB002E9040 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		BB57A1121D8BEDCB002E9040 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		BB57A1131D8BEDCB002E9040 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		BB57A1141D8BEDCB002E9040 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		BB57A1151D8BEDCB002E9040 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		BB57A1161D8BEDCB002E9040 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		BB57A1171D8BEDCB002E9040 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		BB57A1181D8BEDCB002E9040 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		BB57A1191D8BEDCB002E9040 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		BB57A11A1D8BEDCB002E9040 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		BB57A11B1D8BEDCB002E9040 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		BB57A11C1D8BEDCB002E9040 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		BB57A1251D8C4D25002E9040 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		BB57A1261D8C4D25002E9040 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		BB57A12B1D8EFC55002E9040 /* TableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHeaderView.h; sourceTree = "<group>"; };
+		BB57A12C1D8EFC55002E9040 /* TableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHeaderView.m; sourceTree = "<group>"; };
+		BB57A12E1D8F068D002E9040 /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		BB57A12F1D8F068D002E9040 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		BB6F5BCC1D7541B6003A6647 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		BB6F5BCD1D7541B6003A6647 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		BB6F5BD11D754309003A6647 /* MeHeadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHeadImageView.h; sourceTree = "<group>"; };
@@ -270,6 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0FBE471D8002F2004E09DD /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +347,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB0FBE2C1D7FF534004E09DD /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				BB0FBE2D1D7FF534004E09DD /* FMDatabase.h */,
+				BB0FBE2E1D7FF534004E09DD /* FMDatabase.m */,
+				BB0FBE2F1D7FF534004E09DD /* FMDatabaseAdditions.h */,
+				BB0FBE301D7FF534004E09DD /* FMDatabaseAdditions.m */,
+				BB0FBE311D7FF534004E09DD /* FMDatabasePool.h */,
+				BB0FBE321D7FF534004E09DD /* FMDatabasePool.m */,
+				BB0FBE331D7FF534004E09DD /* FMDatabaseQueue.h */,
+				BB0FBE341D7FF534004E09DD /* FMDatabaseQueue.m */,
+				BB0FBE351D7FF534004E09DD /* FMDB.h */,
+				BB0FBE361D7FF534004E09DD /* FMResultSet.h */,
+				BB0FBE371D7FF534004E09DD /* FMResultSet.m */,
+				BB0FBE381D7FF534004E09DD /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		BB0FBE3F1D7FF60B004E09DD /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				BB0FBE431D7FFE48004E09DD /* DataBase.h */,
+				BB0FBE441D7FFE48004E09DD /* DataBase.m */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
+		BB57A10D1D8BEDCB002E9040 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BB57A10E1D8BEDCB002E9040 /* PageControl */,
+				BB57A1171D8BEDCB002E9040 /* SDCollectionViewCell.h */,
+				BB57A1181D8BEDCB002E9040 /* SDCollectionViewCell.m */,
+				BB57A1191D8BEDCB002E9040 /* SDCycleScrollView.h */,
+				BB57A11A1D8BEDCB002E9040 /* SDCycleScrollView.m */,
+				BB57A11B1D8BEDCB002E9040 /* UIView+SDExtension.h */,
+				BB57A11C1D8BEDCB002E9040 /* UIView+SDExtension.m */,
+			);
+			name = SDCycleScrollView;
+			path = "../../../../../Downloads/SDCycleScrollView-master/SDCycleScrollView/Lib/SDCycleScrollView";
+			sourceTree = "<group>";
+		};
+		BB57A10E1D8BEDCB002E9040 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				BB57A10F1D8BEDCB002E9040 /* TAAbstractDotView.h */,
+				BB57A1101D8BEDCB002E9040 /* TAAbstractDotView.m */,
+				BB57A1111D8BEDCB002E9040 /* TAAnimatedDotView.h */,
+				BB57A1121D8BEDCB002E9040 /* TAAnimatedDotView.m */,
+				BB57A1131D8BEDCB002E9040 /* TADotView.h */,
+				BB57A1141D8BEDCB002E9040 /* TADotView.m */,
+				BB57A1151D8BEDCB002E9040 /* TAPageControl.h */,
+				BB57A1161D8BEDCB002E9040 /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 		BB6F5BCF1D7541C4003A6647 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +455,8 @@
 			children = (
 				BB6F5BDE1D7BF8EC003A6647 /* UserInfo.h */,
 				BB6F5BDF1D7BF8EC003A6647 /* UserInfo.m */,
+				BB57A10A1D8B0C5A002E9040 /* CarouselDataModel.h */,
+				BB57A10B1D8B0C5A002E9040 /* CarouselDataModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -347,6 +464,7 @@
 		BBB027C61D5A033000221D9C = {
 			isa = PBXGroup;
 			children = (
+				BB0FBE461D8002F2004E09DD /* libsqlite3.0.tbd */,
 				BBB027D11D5A033000221D9C /* wenwobei */,
 				BBB027EB1D5A033100221D9C /* wenwobeiTests */,
 				BBB027F61D5A033100221D9C /* wenwobeiUITests */,
@@ -372,6 +490,7 @@
 				BBB027DE1D5A033000221D9C /* Assets.xcassets */,
 				BBB027E31D5A033100221D9C /* Info.plist */,
 				BBB028101D5A090200221D9C /* Config.h */,
+				BB0FBE3F1D7FF60B004E09DD /* DB */,
 				BBB028301D5E240600221D9C /* Vendors */,
 				BBB0280F1D5A08D700221D9C /* Public */,
 				BB6F5BD41D7566BA003A6647 /* Detail */,
@@ -477,6 +596,8 @@
 				BBB028061D5A04D500221D9C /* HQTabBar.m */,
 				BBB028261D5A2BEE00221D9C /* SimpleTableViewCell.h */,
 				BBB028271D5A2BEE00221D9C /* SimpleTableViewCell.m */,
+				BB57A12E1D8F068D002E9040 /* ImageTableViewCell.h */,
+				BB57A12F1D8F068D002E9040 /* ImageTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -504,6 +625,8 @@
 			children = (
 				BBB0281C1D5A0B0D00221D9C /* DiscoverViewController.h */,
 				BBB0281D1D5A0B0D00221D9C /* DiscoverViewController.m */,
+				BB57A1251D8C4D25002E9040 /* WebViewController.h */,
+				BB57A1261D8C4D25002E9040 /* WebViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -515,6 +638,8 @@
 				BBB028241D5A23A400221D9C /* CarouselView.m */,
 				BB6F5BDA1D75C6EC003A6647 /* MeView.h */,
 				BB6F5BDB1D75C6EC003A6647 /* MeView.m */,
+				BB57A12B1D8EFC55002E9040 /* TableHeaderView.h */,
+				BB57A12C1D8EFC55002E9040 /* TableHeaderView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -535,6 +660,8 @@
 		BBB028301D5E240600221D9C /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				BB57A10D1D8BEDCB002E9040 /* SDCycleScrollView */,
+				BB0FBE2C1D7FF534004E09DD /* fmdb */,
 				BBB0288B1D5EF61400221D9C /* SDWebImage */,
 				BBB028481D5E401B00221D9C /* MJRefresh */,
 				BBB028311D5E248900221D9C /* AFNetworking */,
@@ -813,7 +940,7 @@
 		BBB027C71D5A033000221D9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = HanQi;
 				TargetAttributes = {
 					BBB027CE1D5A033000221D9C = {
@@ -859,6 +986,7 @@
 			files = (
 				BBB028851D5E401B00221D9C /* MJRefresh.bundle in Resources */,
 				BBB027DF1D5A033000221D9C /* Assets.xcassets in Resources */,
+				BB0FBE3E1D7FF534004E09DD /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,7 +1017,9 @@
 				BBB028DF1D5F6D6400221D9C /* SendTotalSimpleView.m in Sources */,
 				BBB028211D5A1AB400221D9C /* HQNavigationController.m in Sources */,
 				BBB028411D5E248900221D9C /* AFSecurityPolicy.m in Sources */,
+				BB0FBE3D1D7FF534004E09DD /* FMResultSet.m in Sources */,
 				BBB028B71D5EF61400221D9C /* UIImage+GIF.m in Sources */,
+				BB57A11E1D8BEDCB002E9040 /* TAAnimatedDotView.m in Sources */,
 				BBB028861D5E401B00221D9C /* MJRefreshConst.m in Sources */,
 				BBB028B31D5EF61400221D9C /* SDWebImageDownloaderOperation.m in Sources */,
 				BBB028191D5A0AA600221D9C /* SendViewController.m in Sources */,
@@ -898,11 +1028,14 @@
 				BBB028821D5E401B00221D9C /* MJRefreshGifHeader.m in Sources */,
 				BBB028871D5E401B00221D9C /* NSBundle+MJRefresh.m in Sources */,
 				BBB028AE1D5EF61400221D9C /* NSData+ImageContentType.m in Sources */,
+				BB0FBE391D7FF534004E09DD /* FMDatabase.m in Sources */,
 				BBB028281D5A2BEE00221D9C /* SimpleTableViewCell.m in Sources */,
 				BBB0287F1D5E401B00221D9C /* MJRefreshBackGifFooter.m in Sources */,
 				BBB0287C1D5E401B00221D9C /* MJRefreshAutoGifFooter.m in Sources */,
 				BBB028BC1D5EF61400221D9C /* UIView+WebCacheOperation.m in Sources */,
 				BBB028831D5E401B00221D9C /* MJRefreshNormalHeader.m in Sources */,
+				BB0FBE3B1D7FF534004E09DD /* FMDatabasePool.m in Sources */,
+				BB57A10C1D8B0C5A002E9040 /* CarouselDataModel.m in Sources */,
 				BBB028791D5E401B00221D9C /* MJRefreshComponent.m in Sources */,
 				BBB0288A1D5E401B00221D9C /* UIView+MJExtension.m in Sources */,
 				BBB0282F1D5C842E00221D9C /* InfoNetworkModel.m in Sources */,
@@ -911,7 +1044,9 @@
 				BB6F5BE31D7EB6EA003A6647 /* DetailSubView.m in Sources */,
 				BBB028B81D5EF61400221D9C /* UIImage+MultiFormat.m in Sources */,
 				BBB028C31D5F127B00221D9C /* SendTypeView.m in Sources */,
+				BB0FBE3A1D7FF534004E09DD /* FMDatabaseAdditions.m in Sources */,
 				BBB028421D5E248900221D9C /* AFURLRequestSerialization.m in Sources */,
+				BB57A1271D8C4D25002E9040 /* WebViewController.m in Sources */,
 				BBB028891D5E401B00221D9C /* UIScrollView+MJRefresh.m in Sources */,
 				BBB028B91D5EF61400221D9C /* UIImage+WebP.m in Sources */,
 				BBB028B41D5EF61400221D9C /* SDWebImageManager.m in Sources */,
@@ -930,8 +1065,12 @@
 				BBB028C61D5F12AF00221D9C /* SendReasonView.m in Sources */,
 				BBB028801D5E401B00221D9C /* MJRefreshBackNormalFooter.m in Sources */,
 				BBB028091D5A04D500221D9C /* HQTabBar.m in Sources */,
+				BB57A1211D8BEDCB002E9040 /* SDCollectionViewCell.m in Sources */,
+				BB57A11F1D8BEDCB002E9040 /* TADotView.m in Sources */,
 				BBB028B11D5EF61400221D9C /* SDWebImageDecoder.m in Sources */,
 				BBB028D51D5F137900221D9C /* SendSegmentView.m in Sources */,
+				BB57A1221D8BEDCB002E9040 /* SDCycleScrollView.m in Sources */,
+				BB0FBE3C1D7FF534004E09DD /* FMDatabaseQueue.m in Sources */,
 				BBB0287E1D5E401B00221D9C /* MJRefreshAutoStateFooter.m in Sources */,
 				BBB028CF1D5F131300221D9C /* SendPositionView.m in Sources */,
 				BBB028BA1D5EF61400221D9C /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -939,17 +1078,23 @@
 				BBB028841D5E401B00221D9C /* MJRefreshStateHeader.m in Sources */,
 				BBB028161D5A0A9100221D9C /* LikeViewController.m in Sources */,
 				BBB028B61D5EF61400221D9C /* UIButton+WebCache.m in Sources */,
+				BB57A1301D8F068D002E9040 /* ImageTableViewCell.m in Sources */,
 				BBB0282C1D5C786A00221D9C /* SimpleTableViewCellModel.m in Sources */,
 				BB6F5BD91D75679E003A6647 /* DetailViewController.m in Sources */,
 				BBB028BB1D5EF61400221D9C /* UIImageView+WebCache.m in Sources */,
 				BBB0287D1D5E401B00221D9C /* MJRefreshAutoNormalFooter.m in Sources */,
 				BBB028DC1D5F69BC00221D9C /* DrawUtils.m in Sources */,
+				BB57A11D1D8BEDCB002E9040 /* TAAbstractDotView.m in Sources */,
 				BBB028B21D5EF61400221D9C /* SDWebImageDownloader.m in Sources */,
+				BB0FBE451D7FFE48004E09DD /* DataBase.m in Sources */,
 				BBB028431D5E248900221D9C /* AFURLResponseSerialization.m in Sources */,
 				BBB028C91D5F12C800221D9C /* SendDetailView.m in Sources */,
 				BBB0287B1D5E401B00221D9C /* MJRefreshHeader.m in Sources */,
 				BB6F5BE01D7BF8EC003A6647 /* UserInfo.m in Sources */,
+				BB57A12D1D8EFC55002E9040 /* TableHeaderView.m in Sources */,
 				BB6F5BD31D754309003A6647 /* MeHeadImageView.m in Sources */,
+				BB57A1231D8BEDCB002E9040 /* UIView+SDExtension.m in Sources */,
+				BB57A1201D8BEDCB002E9040 /* TAPageControl.m in Sources */,
 				BBB028401D5E248900221D9C /* AFNetworkReachabilityManager.m in Sources */,
 				BBB028D21D5F133600221D9C /* SendPriceView.m in Sources */,
 				BBB028811D5E401B00221D9C /* MJRefreshBackStateFooter.m in Sources */,
@@ -1005,8 +1150,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1049,8 +1196,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

@@ -53,7 +53,7 @@
                 
                 SimpleTableViewCellModel *data = object;
                 
-                if ([data.askTag isEqualToString:@""]) {
+                if ([data.askTag[0] isEqualToString:@""]) {
                     
                     if (![change[@"old"] isEqualToString:@""]) {
                         
@@ -78,7 +78,7 @@
                     
                     UILabel *lable = totalView.selectTypeView.mainView.subviews[1];
                     
-                    lable.text = data.askTag;
+                    lable.text = data.askTag[0];
                     
                     if ([lable.text isEqualToString:@""]) {
                     
