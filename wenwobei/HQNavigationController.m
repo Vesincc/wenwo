@@ -21,8 +21,6 @@
     
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:TITLE_COLER, NSFontAttributeName:[UIFont systemFontOfSize:20], }];
     
-    self.navigationBar.backItem.title = @"返回";
-    
     [self.navigationBar setTintColor:TITLE_COLER];
     
 }

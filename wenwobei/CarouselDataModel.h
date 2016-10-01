@@ -22,6 +22,6 @@
 
 + (NSArray *)initWithData:(id)data;
 
-- (instancetype)initWithCarouselClickURL:(NSString *)carouselClickURL carouselImage:(NSString *)carouselImage carouselName:(NSString *)carouselName createdAt:(NSString *)createdAt likeNum:(NSInteger)likeNum liked:(NSInteger)liked objectId:(NSString *)objectId show:(NSInteger)show updatedAt:(NSString *)updatedAt;
+- (instancetype)initWithCarouselClickURL:(NSString *)carouselClickURL carouselImage:(NSString *)carouselImage carouselName:(NSString *)carouselName createdAt:(NSString *)createdAt likeNum:(int)likeNum liked:(int)liked objectId:(NSString *)objectId show:(NSInteger)show updatedAt:(NSString *)updatedAt;
 
 @end

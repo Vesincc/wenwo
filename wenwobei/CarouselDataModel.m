@@ -10,7 +10,7 @@
 
 @implementation CarouselDataModel
 
-- (instancetype)initWithCarouselClickURL:(NSString *)carouselClickURL carouselImage:(NSString *)carouselImage carouselName:(NSString *)carouselName createdAt:(NSString *)createdAt likeNum:(NSInteger)likeNum liked:(NSInteger)liked objectId:(NSString *)objectId show:(NSInteger)show updatedAt:(NSString *)updatedAt
+- (instancetype)initWithCarouselClickURL:(NSString *)carouselClickURL carouselImage:(NSString *)carouselImage carouselName:(NSString *)carouselName createdAt:(NSString *)createdAt likeNum:(int)likeNum liked:(int)liked objectId:(NSString *)objectId show:(NSInteger)show updatedAt:(NSString *)updatedAt
 {
     self = [super init];
     if (self) {
@@ -41,8 +41,9 @@
         for (int i = 0; i < JsonData.count; i++) {
         
             NSDictionary *dic = JsonData[i];
-            
-            CarouselDataModel *model = [[CarouselDataModel alloc] initWithCarouselClickURL:dic[@"carouselClickURL"] carouselImage:dic[@"carouselImage"] carouselName:dic[@"carouselName"] createdAt:dic[@"createdAt"] likeNum:dic[@"likeNum"] liked:dic[@"liked"] objectId:dic[@"objectId"] show:dic[@"show"] updatedAt:dic[@"updatedAt"]];
+//            NSLog(@"%@", dic);
+            NSLog(@"%d", [dic[@"liked"] intValue] );
+            CarouselDataModel *model = [[CarouselDataModel alloc] initWithCarouselClickURL:dic[@"carouselClickURL"] carouselImage:dic[@"carouselImage"] carouselName:dic[@"carouselName"] createdAt:dic[@"createdAt"] likeNum:[dic[@"likeNum"] intValue] liked:[dic[@"liked"] intValue] objectId:dic[@"objectId"] show:[dic[@"show"] intValue]updatedAt:dic[@"updatedAt"]];
             
 //            NSLog(@"%@, %@, %@, %@, %d, %d, %@, %d, %@", model.carouselClickURL, model.carouselImage, model.carouselName, model.createdAt, model.likeNum, model.liked, model.objectId, model.show, model.updatedAt);
             

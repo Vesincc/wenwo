@@ -24,6 +24,9 @@
 #import "WebViewController.h"
 #import "TableHeaderView.h"
 #import "ImageTableViewCell.h"
+#import "SpecialViewController.h"
+#import "ClassifyViewController.h"
+#import "JLCardViewController.h"
 
 @interface DiscoverViewController() <UITableViewDelegate, UITableViewDataSource, SDCycleScrollViewDelegate, TableHeaderViewDelegate>
 
@@ -122,7 +125,7 @@
         for (int i = 0; i < self.carouselModel.count; i++) {
             
             CarouselDataModel *model = self.carouselModel[i];
-            [imageStrings addObject:model.carouselImage];
+            [imageStrings addObject:[model.carouselImage stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
             
         }
         
@@ -206,8 +209,6 @@
         }];
         [taskNetwork start];
     }];
-
-    
     
     [self meView];
     
@@ -328,7 +329,7 @@
                     
                     for (int i = 0; i < carouelModel.count; i++) {
                         CarouselDataModel *model = carouelModel[i];
-                        [imageStrings addObject:model.carouselImage];
+                        [imageStrings addObject:[model.carouselImage stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
                         
                         [self.carouselModel addObject:carouelModel[i]];
                         
@@ -526,6 +527,42 @@
 - (void)tableHeaderView:(TableHeaderView *)view didClick:(UIView *)clickView atIndex:(NSInteger)index {
 
     NSLog(@"click------>%ld", index);
+    
+    switch (index) {
+        case 0:{
+            ClassifyViewController *vc = [[ClassifyViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            
+            break;
+        }
+            
+        case 1: {
+        
+            JLCardViewController *vc = [[JLCardViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        
+            break;
+        
+        }
+            
+            
+            
+        case 2: {
+        
+            SpecialViewController *vc = [[SpecialViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            
+            break;
+        
+        }
+            
+        
+            
+            
+    }
     
     
 }
